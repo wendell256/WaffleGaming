@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wendell256/WaffleGaming/issues"
   },
-  "homepage": "https://github.com/wendell256/WaffleGaming#readme"
+  "homepage": "https://github.com/wendell256/WaffleGaming#readme",
+  "dependencies": {
+    "firebase": "^7.12.0"
+  }
 }

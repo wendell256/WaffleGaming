@@ -497,21 +497,22 @@ section
 	background: transparent;
 	cursor: pointer;
 }
-.user
+input.user
 {
 	margin-right: 28px;
+
 }
-.user a > div
+input.user a > div
 {
 	width: 40px;
 	height: 40px;
 }
-.user a > div > svg
+input.user a > div > svg
 {
 	max-width: 100%;
 	height: auto;
 }
-.user a > div > div
+input.user a > div > div
 {
 	position: absolute;
 	top: -12px;
@@ -1687,3 +1688,4 @@ section
 	color: #969696;
 	font-weight: 300;
 }
+

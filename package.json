@@ -1,7 +1,6 @@
 {
   "name": "wafflegaming",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +17,6 @@
   "homepage": "https://github.com/wendell256/WaffleGaming#readme",
   "dependencies": {
     "firebase": "^7.12.0"
-  }
+  },
+  "description": ""
 }

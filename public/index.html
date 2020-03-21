@@ -14,116 +14,10 @@
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link href="styles/login-register.css" rel="stylesheet" />
+<script src="js/login-register.js"></script>
 
 <style>
-	input[type=text], input[type=password] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-  }
-  
-    
-  button:hover {
-	opacity: 0.8;
-  }
-  
-  /* Extra styles for the cancel button */
-  .cancelbtn {
-	width: auto;
-	padding: 10px 18px;
-	background-color: #f44336;
-  }
-  
-  /* Center the image and position the close button */
-  .imgcontainer {
-	text-align: center;
-	margin: 24px 0 12px 0;
-	position: relative;
-  }
-  
-  img.avatar {
-	width: 40%;
-	border-radius: 50%;
-  }
-  
-  .container2 {
-	padding: 16px;
-  }
-  
-  span.psw {
-	float: right;
-	padding-top: 16px;
-  }
-  
-  /* The Modal (background) */
-  .modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-	padding-top: 60px;
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-	background-color: #fefefe;
-	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button (x) */
-  .close {
-	position: absolute;
-	right: 25px;
-	top: 0;
-	color: #000;
-	font-size: 35px;
-	font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-	color: red;
-	cursor: pointer;
-  }
-  
-  /* Add Zoom Animation */
-  .animate {
-	-webkit-animation: animatezoom 0.6s;
-	animation: animatezoom 0.6s
-  }
-  
-  @-webkit-keyframes animatezoom {
-	from {-webkit-transform: scale(0)} 
-	to {-webkit-transform: scale(1)}
-  }
 	
-  @keyframes animatezoom {
-	from {transform: scale(0)} 
-	to {transform: scale(1)}
-  }
-  
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-	span.psw {
-	   display: block;
-	   float: none;
-	}
-	.cancelbtn {
-	   width: 100%;
-	}
-  }
-
 </style>
 </head>
 <body>
@@ -203,15 +97,62 @@
 				<!--div class="user"><a href="#"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				-->
 				
-				<input class="user" type="image" src = "images/user.svg"  width="26" height="26" margin-right="28" onclick="document.getElementById('id01').style.display='block'">
-				
-				<div id="id01" class="modal">
+				<input class="user" type="image" src = "images/user.svg"  width="26" height="26" margin-right="28" onclick="document.getElementById('modal-login').style.display='block'">
+                
+                
+                <div id="modal-register" class="modal">
   
-					<form class="modal-content animate" action="/action_page.php" method="post">
-					  <div class="imgcontainer">
-						<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+					<div id="RegisterForm" class="modal-content animate" >
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('modal-register').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <img src="images/WG_Logo.jpg" alt="Logo" class="avatar">
+                          </div>
+				  
+					  <div class="container2">
+                        
+                         <div class="social">
+                                    <a class="circle github" href="#">
+                                        <i class="fa fa-github fa-fw"></i>
+                                    </a>
+                                    <a id="google_login" class="circle google" href="#">
+                                        <i class="fa fa-google-plus fa-fw"></i>
+                                    </a>
+                                    <a id="facebook_login" class="circle facebook" href="#">
+                                        <i class="fa fa-facebook fa-fw"></i>
+                                    </a>
+                        </div>
+                            <form id="register-form">
+                                <label><b>E-mail</b></label>
+						        <input type="text" placeholder="Enter E-mail"  id="register_email" required>
+				  
+						        <label><b>Password</b></label>
+						        <input type="password" placeholder="Enter Password" id="register_psw" required>
+						  
+						        <button type="submit" class="button text-light bg-dark" >Create Account</button>
+                            </form>
+                            
 						
 					  </div>
+				  
+					  <div class="container2" style="background-color:#524d4d">
+						<button type="button" onclick="document.getElementById('modal-register').style.display='none'" class="cancelbtn text-light bg-danger">Cancel</button>
+                        <div class="forgot">
+                            <span>Already have an account? 
+                                 <a href="javascript: void(0);" onclick="showLoginForm();">Login</a>
+                            </span>
+                        </div>
+                        </div>
+					</div>
+				</div>
+
+
+				<div id="modal-login" class="modal">
+  
+					<div id="LoginForm" class="modal-content animate" >
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('modal-login').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <img src="images/WG_Logo.jpg" alt="Logo" class="avatar">
+                          </div>
 				  
 					  <div class="container2">
                         
@@ -227,26 +168,30 @@
                                     </a>
                                   </div>
 
-						<label for="uname"><b>Username</b></label>
-						<input type="text" placeholder="Enter Username" name="uname" required>
+						<label for="uname"><b>E-mail</b></label>
+						<input type="text" placeholder="Enter E-mail" name="uname" required>
 				  
 						<label for="psw"><b>Password</b></label>
 						<input type="password" placeholder="Enter Password" name="psw" required>
 						  
-						<button type="submit">Login</button>
+						<button type="submit" class="button text-light bg-dark">Login</button>
 						
 					  </div>
 				  
-					  <div class="container2" style="background-color:#f1f1f1">
-						<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-						<span class="psw"> <a href="#">Register?</a></span>
-					  </div>
-					</form>
+					  <div class="container2" style="background-color:#524d4d">
+						<button type="button" onclick="document.getElementById('modal-login').style.display='none'" class="cancelbtn text-light bg-danger">Cancel</button>
+                        <div class="forgot">
+                            <span>Looking to
+                                 <a href="javascript: void(0);" onclick="showRegisterForm();">create an account</a>
+                            ?</span>
+                        </div>
+                        </div>
+					</div>
 				</div>
 
 				  <script>
 					// Get the modal
-					var modal = main_styles.getElementById('id01');
+					var modal = document.getElementById('modal-login');
 					
 					// When the user clicks anywhere outside of the modal, close it
 					window.onclick = function(event) {
@@ -978,15 +923,36 @@
 		
 </div>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.12.0/firebase-app.js"></script>
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/7.12.0/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.12.0/firebase-analytics.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="/__/firebase/7.12.0/firebase-analytics.js"></script>
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/7.12.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.12.0/firebase-firestore.js"></script>
+
+<script>
+   
+    var config = {
+      apiKey: "AIzaSyDGmY6ivMgdySiSjUxSeDnYAv8Sfzlm47c",
+      authDomain: "wafflegaming-8f97b.firebaseapp.com",
+      databaseURL: "https://wafflegaming-8f97b.firebaseio.com",
+      projectId: "wafflegaming-8f97b"
+    };
+    firebase.initializeApp(config);
+    
+    
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    
+    
+  </script>
+
+
+</script>
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
@@ -1001,7 +967,7 @@
 <script src="plugins/progressbar/progressbar.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
-
+<script src="js/auth.js"></script>
 
 
 </body>

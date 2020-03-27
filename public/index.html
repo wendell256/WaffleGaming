@@ -15,10 +15,11 @@
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link href="styles/login-register.css" rel="stylesheet" />
 <script src="js/login-register.js"></script>
-
+<link rel='manifest' href='/manifest.json'>
 <style>
 	
 </style>
+
 </head>
 <body>
 
@@ -96,9 +97,9 @@
 				<!-- User -->
 				<!--div class="user"><a href="#"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				-->
-				
-				<input class="user" type="image" src = "images/user.svg"  width="26" height="26" margin-right="28" onclick="document.getElementById('modal-login').style.display='block'">
-                
+				<div class="logged-out">
+					<input class="user" type="image" src = "images/user.svg"  width="26" height="26" margin-right="28" onclick="document.getElementById('modal-login').style.display='block'">
+				</div>
                 
                 <div id="modal-register" class="modal">
   
@@ -144,7 +145,9 @@
                         </div>
 					</div>
 				</div>
-
+				<div class="logged-in">
+					<input class="user" id="logout" type="image" src = "images/logou.jpg"  width="20" height="20" margin-right="28">
+				</div>
 
 				<div id="modal-login" class="modal">
   
@@ -167,14 +170,15 @@
                                         <i class="fa fa-facebook fa-fw"></i>
                                     </a>
                                   </div>
-
-						<label for="uname"><b>E-mail</b></label>
-						<input type="text" placeholder="Enter E-mail" name="uname" required>
+								  <form id="login-form">
+									<label for="uname"><b>E-mail</b></label>
+									<input type="text" placeholder="Enter E-mail" name="uname" id="login-email" required>
 				  
-						<label for="psw"><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" name="psw" required>
+									<label for="psw"><b>Password</b></label>
+									<input type="password" placeholder="Enter Password" name="psw" id="login-password" required>
 						  
-						<button type="submit" class="button text-light bg-dark">Login</button>
+									<button type="submit" class="button text-light bg-dark">Login</button>
+								</form>
 						
 					  </div>
 				  
@@ -236,7 +240,7 @@
 											<div class="home_items">
 												<div class="row">
 													<div class="col-sm-3 offset-lg-1">
-														<div class="home_item_side"><a href="product.html"><img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/kronos/common/social-share/social-share-image.jpg" alt=""></a></div>
+														<div class="home_item_side">   <a onclick="dynamicRequest('Call Of Duty')" ><img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/kronos/common/social-share/social-share-image.jpg" alt=""></a></div>
 													</div>
 													<div class="col-lg-4 col-md-6 col-sm-8 offset-sm-2 offset-md-0">
 														<div class="product home_item_large">
@@ -274,7 +278,7 @@
 														</div>
 													</div>
 													<div class="col-sm-3">
-														<div class="home_item_side"><a href="product.html"><img src="https://hb.imgix.net/cf058399795e8df05aa33b73c4cd598762bdfb33.jpg?auto=compress,format&fit=crop&h=353&w=616&s=7a07e8d84a4cf1d43eb1bab8d3b1d310" alt=""></a></div>
+														<div class="home_item_side">   <a href="product.html"><img src="https://hb.imgix.net/cf058399795e8df05aa33b73c4cd598762bdfb33.jpg?auto=compress,format&fit=crop&h=353&w=616&s=7a07e8d84a4cf1d43eb1bab8d3b1d310" alt=""></a></div>
 													</div>
 												</div>
 											</div>
@@ -951,9 +955,6 @@
     
   </script>
 
-
-</script>
-
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
 <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
@@ -968,6 +969,7 @@
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/auth.js"></script>
+
 
 
 </body>

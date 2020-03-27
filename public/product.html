@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+
 <title>Product</title>
 
 <meta charset="utf-8">
@@ -13,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/flexslider/flexslider.css">
 <link rel="stylesheet" type="text/css" href="styles/product.css">
 <link rel="stylesheet" type="text/css" href="styles/product_responsive.css">
+
 </head>
 <body>
 
@@ -118,34 +120,16 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Product -->
-
+<!-- Product -->
 		<div class="product">
 			<div class="container">
 				<div class="row">
 					
 					<!-- Product Image -->
-					<div class="col-lg-6">
-						<div class="product_image_slider_container">
-							<div id="slider" class="flexslider">
-								<ul class="slides">
-									
-								</ul>
-							</div>
-							<div class="carousel_container">
-								<div id="carousel" class="flexslider">
-									
-									<ul class="slides">
-										
-									</ul>
-								
-								</div>
-								<div class="fs_prev fs_nav disabled"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-								<div class="fs_next fs_nav"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-							</div>
-						</div>
+					<div class="din_im">
+						
 					</div>
+
 
 					<!-- Product Info -->
 					<div class="col-lg-6 product_col">
@@ -306,6 +290,37 @@
 		
 </div>
 
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="/__/firebase/7.12.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="/__/firebase/7.12.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="/__/firebase/7.12.0/firebase-auth.js"></script>
+<script src="/__/firebase/7.12.0/firebase-firestore.js"></script>
+
+<script>
+ 
+  var config = {
+	apiKey: "AIzaSyDGmY6ivMgdySiSjUxSeDnYAv8Sfzlm47c",
+	authDomain: "wafflegaming-8f97b.firebaseapp.com",
+	databaseURL: "https://wafflegaming-8f97b.firebaseio.com",
+	projectId: "wafflegaming-8f97b"
+  };
+  firebase.initializeApp(config);
+  
+  
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  
+  
+</script>
+
+<script src="js/dinamic.js"></script>
+
+
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
 <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
@@ -319,7 +334,10 @@
 <script src="plugins/progressbar/progressbar.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="plugins/flexslider/jquery.flexslider-min.js"></script>
+
 <script src="js/product.js"></script>
-<script src="js/dinamic.js"></script>
+
+
+
 </body>
 </html>

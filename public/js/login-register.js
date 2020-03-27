@@ -1,3 +1,7 @@
+const guideList = document.querySelector('.guides');
+
+
+
 
     function showRegisterForm(){
         $('#modal-login').fadeOut('fast',function(){

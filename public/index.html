@@ -145,9 +145,11 @@
                         </div>
 					</div>
 				</div>
+
 				<div class="logged-in">
 					<input class="user" id="logout" type="image" src = "images/logou.jpg"  width="20" height="20" margin-right="28">
 				</div>
+				
 
 				<div id="modal-login" class="modal">
   
@@ -193,6 +195,34 @@
 					</div>
 				</div>
 
+				<div id="modal-showAccount" class="modal">
+  
+					<div id="showAcc" class="modal-content animate" >
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('modal-showAccount').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <img src="images/WG_Logo.jpg" alt="Logo" class="avatar">
+                          </div>
+				  
+					  <div>
+						<h4>Account details</h4><br />
+						<div class="account-details">gay</div>
+
+					</div>
+                            
+                            
+						
+					  </div>
+				</div>
+				
+				<div class="logged-in">
+					<input class="user" type="image" src = "images/user.svg"  width="26" height="26" margin-right="28" onclick="document.getElementById('modal-showAccount').style.display='block'">
+				</div>
+				<div class="admin_edit">
+					<input class="user admin_edit" type="image" src = "images/plus.jpg"  width="26" height="26" margin-right="28" onclick="product_creation.html">
+				</div>
+
+				</div>
+
 				  <script>
 					// Get the modal
 					var modal = document.getElementById('modal-login');
@@ -204,6 +234,7 @@
 						}
 					}
 					</script>
+
 					
 				
 				<!-- Cart -->

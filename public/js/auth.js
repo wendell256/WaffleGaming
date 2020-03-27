@@ -1,3 +1,38 @@
+const loggedOutLinks = document.querySelectorAll('.logged-out');
+const loggedInLinks = document.querySelectorAll('.logged-in');
+
+
+
+function hideContent(user){
+  if (user) {
+
+    
+    
+    // toggle user UI elements
+    loggedInLinks.forEach(item => item.style.display = 'block');
+    loggedOutLinks.forEach(item => item.style.display = 'none');
+    if(user.email == 'wendell2556@gmail.com'){
+      document.getElementsByClassName('admin_edit')[0].style.display = 'block';
+    }else{
+      document.getElementsByClassName('admin_edit')[0].style.display = 'none';
+    }
+    //account details
+    
+    
+    const html = `
+    <div>Logged in as ${user.email}</div>
+`;
+ 
+  
+  document.getElementsByClassName('account-details')[0].innerHTML = html;
+  } else {
+    // toggle user elements
+    document.getElementsByClassName('admin_edit')[0].style.display = 'none';
+    loggedInLinks.forEach(item => item.style.display = 'none');
+    loggedOutLinks.forEach(item => item.style.display = 'block');
+  }
+}
+
 
 
 function dynamicRequest(id) {
@@ -23,8 +58,10 @@ function dynamicRequest(id) {
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log('user logged in: ', user);
+    console.log(user.email)
+    hideContent(user);
   } else {
+    hideContent(user);
     console.log('user logged out');
   }
 })

@@ -53,6 +53,30 @@ function dynamicRequest(id) {
   
 
 }
+function dynamicRequestN(id) {
+  db.collection("Dynamic").doc("requestn").delete().then(function () {
+    console.log("Document successfully deleted!");
+  }).catch(function (error) {
+    console.error("Error removing document: ", error);
+  });
+
+  db.collection("Dynamic").doc("request").delete().then(function () {
+    console.log("Document successfully deleted!");
+    db.collection("Dynamic").doc("requestn").set({
+    name: id,
+  })
+    .then(function () { window.location.href = "/product.html"; })
+
+  }).catch(function (error) {
+    console.error("Error removing document: ", error);
+    db.collection("Dynamic").doc("requestn").set({
+      name: id,
+    })
+      .then(function () { window.location.href = "/product.html"; })
+  });
+  
+
+}
 
 
 // listen for auth status changes
@@ -60,6 +84,7 @@ auth.onAuthStateChanged(user => {
   if (user) {
     console.log(user.email)
     hideContent(user);
+    
   } else {
     hideContent(user);
     console.log('user logged out');
